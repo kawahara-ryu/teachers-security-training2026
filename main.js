@@ -664,3 +664,91 @@ function escapeToHawaii() {
   if (audio) audio.pause();
   if (audioTitle) audioTitle.pause();
 }
+
+
+// =========================================
+// 現実逃避（波の音生成）機能
+// =========================================
+let waveSource, waveFilter, waveGain, waveLFO, volLFO;
+
+function playWaveSound() {
+  initAudio();
+  if (waveGain) return; // すでに再生中
+
+  const bufferSize = audioCtx.sampleRate * 2;
+  const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+  const data = buffer.getChannelData(0);
+  for (let i = 0; i < bufferSize; i++) {
+    data[i] = Math.random() * 2 - 1; // ホワイトノイズ
+  }
+
+  waveSource = audioCtx.createBufferSource();
+  waveSource.buffer = buffer;
+  waveSource.loop = true;
+
+  waveFilter = audioCtx.createBiquadFilter();
+  waveFilter.type = 'lowpass';
+  waveFilter.Q.value = 0.5;
+  waveFilter.frequency.value = 400;
+
+  waveLFO = audioCtx.createOscillator();
+  waveLFO.type = 'sine';
+  waveLFO.frequency.value = 0.12; // 約8秒周期の波
+
+  const lfoGain = audioCtx.createGain();
+  lfoGain.gain.value = 600;
+  waveLFO.connect(lfoGain);
+  lfoGain.connect(waveFilter.frequency);
+
+  waveGain = audioCtx.createGain();
+  waveGain.gain.value = 0.3;
+
+  volLFO = audioCtx.createOscillator();
+  volLFO.type = 'sine';
+  volLFO.frequency.value = 0.12;
+  const volLFOGain = audioCtx.createGain();
+  volLFOGain.gain.value = 0.2;
+  volLFO.connect(volLFOGain);
+  volLFOGain.connect(waveGain.gain);
+
+  waveSource.connect(waveFilter);
+  waveFilter.connect(waveGain);
+  waveGain.connect(audioCtx.destination);
+
+  waveSource.start();
+  waveLFO.start();
+  volLFO.start();
+}
+
+function stopWaveSound() {
+  if (waveGain) {
+    waveGain.gain.setTargetAtTime(0, audioCtx.currentTime, 0.5);
+    setTimeout(() => {
+      if (waveSource) {
+        waveSource.stop();
+        waveLFO.stop();
+        volLFO.stop();
+        waveSource.disconnect();
+        waveGain.disconnect();
+        waveSource = null;
+        waveGain = null;
+      }
+    }, 1000);
+  }
+}
+
+function startEscapeReality() {
+  document.getElementById('audio-title').pause();
+  switchScreen('screen-escape');
+  playWaveSound();
+}
+
+function stopEscapeReality() {
+  stopWaveSound();
+  switchScreen('screen-title');
+}
+
+function escapeToHawaii() {
+  startEscapeReality();
+}
+

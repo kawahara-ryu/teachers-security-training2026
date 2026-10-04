@@ -42,6 +42,8 @@
     </div>
 
     <button class="start-btn" id="btn-start" onclick="goToDifficulty()">▶ 定時退社を夢見て防衛任務を開始する</button>
+    <br>
+    <button class="start-btn" onclick="startEscapeReality()" style="background:#4a90e2; margin-top:10px; font-size: 1rem; padding: 10px 20px;">▶ もう何もかも嫌なので現実逃避する</button>
 
     <!-- 魔王魂クレジット表記 -->
     <div class="bgm-credit">BGM：魔王魂</div>
@@ -94,7 +96,7 @@
         <div class="diff-name">【中間管理職】<br>学年主任モード</div>
         <div class="diff-desc">
           現場の最前線！ランダム出題。<br>
-          8問 / 1問30秒<br>
+          8問 / 1問45秒<br>
           <span style="color:#ffcc00; font-size:0.85rem; font-weight:bold;">想定月給：額面35万(胃薬代自己負担)</span>
         </div>
       </div>
@@ -105,7 +107,7 @@
         <div class="diff-name">【孤立無援】<br>情報担当モード</div>
         <div class="diff-desc">
           巧妙なひっかけ問題の嵐！<br>
-          12問 / 1問15秒<br>
+          12問 / 1問25秒<br>
           <span style="color:#ffcc00; font-size:0.85rem; font-weight:bold;">想定月給：額面そのまま(業務量3倍)</span>
         </div>
       </div>
@@ -322,6 +324,17 @@
       <br><br><br>
       <button class="start-btn" onclick="switchScreen('screen-result')"
         style="font-size:1.2rem; padding:10px 20px;">結果画面へ</button>
+    </div>
+  </div>
+
+  <!-- =========================================
+       4. 現実逃避画面
+       ========================================= -->
+  <div class="screen" id="screen-escape" style="background-image: url('./beach_escape.jpg'); background-size: cover; background-position: center;">
+    <div style="background: rgba(0,0,0,0.5); padding: 40px; border-radius: 10px; display: inline-block; margin-top: 20vh;">
+      <h2 style="font-size: 3rem; margin-bottom: 20px;">現実逃避中...</h2>
+      <p style="font-size: 1.5rem; margin-bottom: 30px;">すべてを忘れて、波の音をお聞きください。</p>
+      <button class="back-btn" onclick="stopEscapeReality()">← 絶望の職員室へ戻る</button>
     </div>
   </div>
 
