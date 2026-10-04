@@ -119,10 +119,10 @@ function startGame(mode) {
     timeLimitForMode = Infinity; maxQuestions = 5; 
     gameQuestions = questionsData.slice(0, 10).sort(() => 0.5 - Math.random()).slice(0, 5);
   } else if (mode === 'intermediate') {
-    timeLimitForMode = 30; maxQuestions = 8; 
+    timeLimitForMode = 45; maxQuestions = 8; 
     gameQuestions = questionsData.slice(10, 22).sort(() => 0.5 - Math.random()).slice(0, 8);
   } else if (mode === 'advanced') {
-    timeLimitForMode = 15; maxQuestions = 12; 
+    timeLimitForMode = 25; maxQuestions = 12; 
     gameQuestions = questionsData.slice(22, 39).sort(() => 0.5 - Math.random()).slice(0, 12);
   } else if (mode === 'survival') {
     timeLimitForMode = 20; maxQuestions = Infinity; gameQuestions = []; 

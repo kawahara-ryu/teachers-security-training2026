@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -8,6 +9,7 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
+
 <body>
   <div id="flash-overlay"></div>
 
@@ -26,26 +28,20 @@
     <h1 class="main-title">「先生、それ全世界公開されてますよ！」<br><span>〜絶望の職員室サバイバル〜</span></h1>
 
     <div class="title-visual-container">
-      <div class="visual-card">
-        <img src="./security_cat.png" alt="防衛隊ネコ">
-      </div>
-      <div class="visual-vs">VS</div>
-      <div class="visual-card boss">
-        <img src="./leak_boss.png" alt="うっかりウイルス">
-      </div>
+      <img src="./title_visual_wide.jpg" alt="絶望の職員室と巨大USB" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.4);">
     </div>
 
     <div class="story-box">
       <div class="story-alert">⚠️ 職員室が凍りつく5秒前 ⚠️</div>
       <p>「あれ？ この成績表、誰でも見れるようになってない？」<br>
-      その一言から、平和な職員室は阿鼻叫喚の地獄へと変貌した——。</p>
+        その一言から、平和な職員室は阿鼻叫喚の地獄へと変貌した——。</p>
       <p>「パスワードは付箋でモニターにペタリ」「謎のUSBはとりあえず挿す」<br>
-      そんな石器時代のセキュリティ意識を狙い、凶悪ウイルスが絶賛増殖中！<br>
-      このままでは校長が泣いて謝る謝罪会見（全国放送）が確定してしまうニャ！</p>
+        そんな石器時代のセキュリティ意識を狙い、凶悪ウイルスが絶賛増殖中！<br>
+        このままでは校長が泣いて謝る謝罪会見（全国放送）が確定してしまうニャ！</p>
       <p>君は孤独なIT担当（防衛隊）となり、息をするようにインシデントを起こす<br>先生たちのガバガバな罠を見抜き、教育委員会の雷から学校を救うのだ！</p>
     </div>
 
-    <button class="start-btn" id="btn-start" onclick="goToDifficulty()">▶ 防衛任務を開始する</button>
+    <button class="start-btn" id="btn-start" onclick="goToDifficulty()">▶ 定時退社を夢見て防衛任務を開始する</button>
 
     <!-- 魔王魂クレジット表記 -->
     <div class="bgm-credit">BGM：魔王魂</div>
@@ -57,15 +53,19 @@
   <div class="screen" id="screen-difficulty">
     <h2 class="section-title" style="color:var(--color-gold); font-size: 2rem; margin-bottom:30px;">⚔️ 研修モードを選択せよ</h2>
 
-    <div style="margin-bottom:20px; background:rgba(255, 50, 50, 0.2); border:1px solid #ff4444; padding:15px; border-radius:5px; text-align:left; max-width:800px; margin-left:auto; margin-right:auto;">
-      <p style="color:var(--color-gold); font-weight:bold; margin-bottom:15px; text-align:center; font-size:1.1rem;">【出勤前の誓約事項】</p>
-      
-      <label style="cursor:pointer; font-size:0.95rem; display:flex; align-items:flex-start; gap:10px; margin-bottom:12px;">
+    <div
+      style="margin-bottom:20px; background:rgba(255, 50, 50, 0.2); border:1px solid #ff4444; padding:15px; border-radius:5px; text-align:left; max-width:800px; margin-left:auto; margin-right:auto;">
+      <p style="color:var(--color-gold); font-weight:bold; margin-bottom:15px; text-align:center; font-size:1.1rem;">
+        【出勤前の誓約事項】</p>
+
+      <label
+        style="cursor:pointer; font-size:0.95rem; display:flex; align-items:flex-start; gap:10px; margin-bottom:12px;">
         <input type="checkbox" id="usb-pledge" style="margin-top:4px; transform:scale(1.2);">
         <span>2026年10月1日以降、<strong>私物USBメモリ</strong>を絶対に学校へ持ち込まないことを誓約します。</span>
       </label>
-      
-      <label style="cursor:pointer; font-size:0.95rem; display:flex; align-items:flex-start; gap:10px; margin-bottom:12px;">
+
+      <label
+        style="cursor:pointer; font-size:0.95rem; display:flex; align-items:flex-start; gap:10px; margin-bottom:12px;">
         <input type="checkbox" id="sticky-pledge" style="margin-top:4px; transform:scale(1.2);">
         <span>私は<strong>パスワードを付箋に書いてモニターに貼らない</strong>ことを、ここに誓います。</span>
       </label>
@@ -135,7 +135,9 @@
           <span class="hud-label">校長の毛根</span>
           <span class="hp-hearts" id="hud-hp">👨👨👨</span>
         </div>
-        <button id="btn-call-it" onclick="callITAdmin()" style="background:#444; color:#fff; border:1px solid #fff; border-radius:4px; padding:3px 8px; font-size:0.75rem; cursor:pointer;">🆘 担当を呼ぶ(HP-1)</button>
+        <button id="btn-call-it" onclick="callITAdmin()"
+          style="background:#444; color:#fff; border:1px solid #fff; border-radius:4px; padding:3px 8px; font-size:0.75rem; cursor:pointer;">🆘
+          担当を呼ぶ(HP-1)</button>
       </div>
       <div class="hud-box">
         <span class="hud-label">SCORE</span>
@@ -162,21 +164,29 @@
 
 
     <!-- 放置ロック画面の罠 -->
-    <div id="screen-lock-trap" style="display:none; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:10000; flex-direction:column; align-items:center; justify-content:center; color:#fff;">
+    <div id="screen-lock-trap"
+      style="display:none; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:10000; flex-direction:column; align-items:center; justify-content:center; color:#fff;">
       <h2 style="color:var(--color-red); margin-bottom:20px; text-shadow:none;">🔒 画面がロックされました</h2>
-      <p style="margin-bottom:20px; font-size:0.95rem; text-align:center;">離席したため自動ロックされました。<br>半角英字で <strong>password</strong> と入力して解除してください。</p>
-      <input type="text" id="lock-password" placeholder="password と入力..." onkeypress="if(event.key === 'Enter') unlockScreen();" style="padding:10px; font-size:1.1rem; margin-bottom:15px; border-radius:4px; border:none; text-align:center; width:200px;">
-      <button onclick="unlockScreen()" style="padding:10px 30px; font-size:1.2rem; background:var(--color-purple); color:#fff; border:2px solid #fff; border-radius:4px; cursor:pointer;">解除</button>
+      <p style="margin-bottom:20px; font-size:0.95rem; text-align:center;">離席したため自動ロックされました。<br>半角英字で
+        <strong>password</strong> と入力して解除してください。</p>
+      <input type="text" id="lock-password" placeholder="password と入力..."
+        onkeypress="if(event.key === 'Enter') unlockScreen();"
+        style="padding:10px; font-size:1.1rem; margin-bottom:15px; border-radius:4px; border:none; text-align:center; width:200px;">
+      <button onclick="unlockScreen()"
+        style="padding:10px 30px; font-size:1.2rem; background:var(--color-purple); color:#fff; border:2px solid #fff; border-radius:4px; cursor:pointer;">解除</button>
     </div>
 
     <!-- 校長からの直電トラップ -->
-    <div id="incoming-call-screen" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:20000; flex-direction:column; align-items:center; justify-content:center; color:#fff;">
+    <div id="incoming-call-screen"
+      style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:20000; flex-direction:column; align-items:center; justify-content:center; color:#fff;">
       <div style="animation: vibrate 0.1s infinite;">
         <div style="font-size:5rem; margin-bottom:10px; text-align:center;">📱</div>
         <h2 style="color:#ff4444; font-size:2rem; margin-bottom:10px; text-shadow:none; text-align:center;">着信中...</h2>
         <p style="font-size:1.5rem; margin-bottom:40px; text-align:center;">怒れる校長先生</p>
       </div>
-      <button onclick="answerCall()" style="padding:15px 30px; font-size:1.2rem; background:#ff4444; color:#fff; border:3px solid #fff; border-radius:30px; cursor:pointer; font-weight:bold; box-shadow:0 4px 10px rgba(255,0,0,0.5);">📞 平謝りして電話を切る</button>
+      <button onclick="answerCall()"
+        style="padding:15px 30px; font-size:1.2rem; background:#ff4444; color:#fff; border:3px solid #fff; border-radius:30px; cursor:pointer; font-weight:bold; box-shadow:0 4px 10px rgba(255,0,0,0.5);">📞
+        平謝りして電話を切る</button>
     </div>
 
     <!-- バトルアリーナ -->
@@ -216,7 +226,8 @@
 
       <!-- インタラクティブ用確定ボタン -->
       <div id="interactive-actions" style="display:none; text-align:center; margin-top: 15px;">
-        <button class="action-btn" onclick="submitInteractive()" style="width:100%; font-size:1.4rem; padding:12px;">✅ この設定で確定する</button>
+        <button class="action-btn" onclick="submitInteractive()" style="width:100%; font-size:1.4rem; padding:12px;">✅
+          この設定で確定する</button>
       </div>
     </div>
   </div>
@@ -226,24 +237,34 @@
        ========================================= -->
   <div class="screen" id="screen-result">
     <div id="res-badge" style="display:none;"></div>
-    <div id="disciplinary-box" style="background:var(--bg-panel); border:8px solid var(--color-gold); padding:30px; color:#fff; margin-bottom:20px; box-shadow:0 10px 30px rgba(0,0,0,0.8); text-shadow:none; position:relative;">
-      <h2 id="result-title" style="color:var(--color-gold); border-bottom:2px solid var(--color-gold); padding-bottom:10px; margin-bottom:15px; font-size:1.8rem; text-align:center; text-shadow:2px 2px 0px #000;">情報セキュリティ研修 最終評価</h2>
-      <p style="font-size:1.1rem; line-height:1.6; margin-bottom:20px; text-align:center;">あなたはサイバー空間の脅威から学校を守るため、<br>過酷な防衛任務を戦い抜きました。</p>
-      
+    <div id="disciplinary-box"
+      style="background:var(--bg-panel); border:8px solid var(--color-gold); padding:30px; color:#fff; margin-bottom:20px; box-shadow:0 10px 30px rgba(0,0,0,0.8); text-shadow:none; position:relative;">
+      <h2 id="result-title"
+        style="color:var(--color-gold); border-bottom:2px solid var(--color-gold); padding-bottom:10px; margin-bottom:15px; font-size:1.8rem; text-align:center; text-shadow:2px 2px 0px #000;">
+        情報セキュリティ研修 最終評価</h2>
+      <p style="font-size:1.1rem; line-height:1.6; margin-bottom:20px; text-align:center;">
+        あなたはサイバー空間の脅威から学校を守るため、<br>過酷な防衛任務を戦い抜きました。</p>
+
       <div style="display:flex; justify-content:space-around; align-items:center; flex-wrap:wrap; gap:20px;">
         <div style="text-align:center; min-width:200px;">
           <div style="font-size:1rem; color:#ccc; margin-bottom:5px;">最終評価</div>
-          <div id="disciplinary-title" style="font-size:2rem; font-weight:bold; color:var(--color-red); margin-bottom:15px; background:#000; padding:10px; border:2px solid #fff;">処分内容</div>
+          <div id="disciplinary-title"
+            style="font-size:2rem; font-weight:bold; color:var(--color-red); margin-bottom:15px; background:#000; padding:10px; border:2px solid #fff;">
+            処分内容</div>
           <div style="font-size:1rem; color:#ccc; margin-bottom:5px;">スコア</div>
-          <div id="res-score" style="font-size:1.8rem; font-family:var(--font-num); font-weight:bold; margin-bottom:15px; color:var(--color-green);">0</div>
+          <div id="res-score"
+            style="font-size:1.8rem; font-family:var(--font-num); font-weight:bold; margin-bottom:15px; color:var(--color-green);">
+            0</div>
           <div style="font-size:1rem; color:#ccc; margin-bottom:5px;">防衛成功率</div>
-          <div id="res-accuracy" style="font-size:1.8rem; font-family:var(--font-num); font-weight:bold; color:var(--color-purple);">0%</div>
+          <div id="res-accuracy"
+            style="font-size:1.8rem; font-family:var(--font-num); font-weight:bold; color:var(--color-purple);">0%</div>
         </div>
         <div style="background:#000; padding:10px; border:2px solid #555; border-radius:50%;">
           <canvas id="radarChart" width="220" height="220"></canvas>
         </div>
       </div>
-      <div id="disciplinary-desc" style="margin-top:25px; font-size:1rem; color:#fff; background:#111; padding:15px; border-left:4px solid var(--color-gold); text-align:left; line-height:1.5;">
+      <div id="disciplinary-desc"
+        style="margin-top:25px; font-size:1rem; color:#fff; background:#111; padding:15px; border-left:4px solid var(--color-gold); text-align:left; line-height:1.5;">
         評価コメントがここに入ります。
       </div>
     </div>
@@ -264,10 +285,14 @@
 
     <!-- ハンコボタンコンテナ -->
     <div id="hanko-btn-container" style="display:none; text-align:center; margin-top:20px;">
-      <p style="font-size:0.95rem; color:#ff3333; font-weight:bold; margin-bottom:10px; text-shadow:1px 1px 0 #fff;">👇 長押しで血判（ハンコ）を押して辞表を提出</p>
-      <button id="btn-hanko" class="action-btn retry" style="position:relative; overflow:hidden; user-select:none; background:#880000; border-color:#fff; min-width: 250px;">
+      <p style="font-size:0.95rem; color:#ff3333; font-weight:bold; margin-bottom:10px; text-shadow:1px 1px 0 #fff;">👇
+        長押しで血判（ハンコ）を押して辞表を提出</p>
+      <button id="btn-hanko" class="action-btn retry"
+        style="position:relative; overflow:hidden; user-select:none; background:#880000; border-color:#fff; min-width: 250px;">
         <span style="position:relative; z-index:1;">辞表を提出する</span>
-        <div id="hanko-progress" style="position:absolute; bottom:0; left:0; height:100%; width:0%; background:rgba(255, 0, 0, 0.7); z-index:0; pointer-events:none; transition: width 0.05s;"></div>
+        <div id="hanko-progress"
+          style="position:absolute; bottom:0; left:0; height:100%; width:0%; background:rgba(255, 0, 0, 0.7); z-index:0; pointer-events:none; transition: width 0.05s;">
+        </div>
       </button>
     </div>
   </div>
@@ -276,7 +301,8 @@
        3.5 エンディング（スタッフロール）画面
        ========================================= -->
   <div class="screen" id="screen-credits" style="background:#000; color:#fff; overflow:hidden; position:relative;">
-    <div id="credits-scroll" style="position:absolute; bottom:-100%; width:100%; text-align:center; font-size:1.2rem; line-height:3;">
+    <div id="credits-scroll"
+      style="position:absolute; bottom:-100%; width:100%; text-align:center; font-size:1.2rem; line-height:3;">
       <h1 style="color:var(--color-gold); font-size:2rem; margin-bottom:50px;">任務完了</h1>
       <p>あなたの活躍により</p>
       <p>学校の機密データは守られました。</p>
@@ -291,9 +317,11 @@
       <br><br>
       <p>戦いは、これからも続く。</p>
       <br><br>
-      <p style="color:var(--color-red); font-size:1.5rem; font-weight:bold; animation:blink 1s infinite;">NEXT INCIDENT: TOMORROW</p>
+      <p style="color:var(--color-red); font-size:1.5rem; font-weight:bold; animation:blink 1s infinite;">NEXT INCIDENT:
+        TOMORROW</p>
       <br><br><br>
-      <button class="start-btn" onclick="switchScreen('screen-result')" style="font-size:1.2rem; padding:10px 20px;">結果画面へ</button>
+      <button class="start-btn" onclick="switchScreen('screen-result')"
+        style="font-size:1.2rem; padding:10px 20px;">結果画面へ</button>
     </div>
   </div>
 
@@ -308,10 +336,12 @@
     </div>
   </div>
 
-  <button onclick="escapeToHawaii()" style="position:fixed; bottom:10px; left:10px; z-index:9999; font-size:0.8rem; color:#aaa; background:transparent; border:none; text-decoration:underline; cursor:pointer;">もう嫌だ</button>
+  <button onclick="escapeToHawaii()"
+    style="position:fixed; bottom:10px; left:10px; z-index:9999; font-size:0.8rem; color:#aaa; background:transparent; border:none; text-decoration:underline; cursor:pointer;">もう嫌だ</button>
 
   <!-- スクリプトの読み込み -->
   <script src="questions.js?v=2"></script>
   <script src="main.js?v=2"></script>
 </body>
+
 </html>
